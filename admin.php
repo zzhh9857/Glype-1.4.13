@@ -973,7 +973,7 @@ if ( $input->gFetch && $user->isAdmin() ) {
 			echo '<style type="text/css">body { margin:0; padding:5px; font:80% Tahoma,Verdana; } a { color: #73A822; }</style>';
 
 			# Connect to glype
-			if ($ch=curl_init('http://www.glype.com/feeds/news.php?vn='.urlencode($CONFIG['version']).'&lk='.urlencode($CONFIG['license_key']).'&cb='.$cache_bust)) {
+			if ($ch=curl_init('http://www.glype.com/feeds/news.php?vn='.urlencode($CONFIG['version']).'&cb='.$cache_bust)) {
 				curl_setopt($ch, CURLOPT_TIMEOUT, 2);
 				$success = curl_exec($ch);
 				curl_close($ch);

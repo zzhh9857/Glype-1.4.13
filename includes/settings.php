@@ -36,7 +36,7 @@ $CONFIG['enable_blockscript'] = false;
 $CONFIG['theme'] = 'glacier';
 
 # Run plugins on these websites
-$CONFIG['plugins'] = 'facebook.com,google.com,hotmail.com,live.com,msn.com,myspace.com,twitter.com,yahoo.com,youtube.com,ytimg.com';
+$CONFIG['plugins'] = 'facebook.com,google.com,hotmail.com,live.com,msn.com,myspace.com,twitter.com,yahoo.com,youtube.com,ytimg.com,zing.vn';
 
 # Temporary directory used by the script. Many features require
 # write permission to the temporary directory. Ensure this

@@ -9,8 +9,7 @@ Unblock blocked sites at school, at work or on a public network using our zero-c
 OUT;
 
 // Proxy logo and slogan
-$themeReplace['logo'] = <<<OUT
-<h1>ProxieThemes</h1><h2><strong class="one"></strong>free <span>&amp;</span> secure<strong class="two"></strong></h2>
+$themeReplace['logo'] = '<h1>'.$_SERVER['HTTP_HOST'].'</h1><h2><strong class="one"></strong>free <span>&amp;</span> secure<strong class="two"></strong></h2>';
 OUT;
 
 // Proxy description - above form.
@@ -30,13 +29,12 @@ OUT;
 
 // Social Link Facebook
 $themeReplace['socialfacebook'] = <<<OUT
-https://www.facebook.com
+browse.php?u=https://www.facebook.com/
 OUT;
 
 // Google analytics on all proxied pages.
 $themeReplace['google'] = <<<OUT
-
-
+browse.php?u=https://www.google.com.vn/
 OUT;
 
 // Put ads on all proxied pages.

@@ -50,6 +50,15 @@ OUT;
 }
 ?>
 		</div>
+		<ul class="social">
+			<li class="google"><a href="<!--[google]-->"></a></li>
+			<li class="facebook"><a href="<!--[socialfacebook]-->"></a></li>
+		</ul>
+		<p><!--[error]--></p>
+		<div id="footer">
+		
+	<span class="link"></span>
+		</div>
 	</div>
 </div>
 </body>
