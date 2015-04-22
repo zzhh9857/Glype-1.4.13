@@ -33,7 +33,7 @@ $CONFIG['enable_blockscript'] = false;
 
 # Theme/skin to use. This should be the name of the appropriate
 # folder inside the /themes/ folder.
-$CONFIG['theme'] = 'default';
+$CONFIG['theme'] = 'glacier';
 
 # Run plugins on these websites
 $CONFIG['plugins'] = 'facebook.com,google.com,hotmail.com,live.com,msn.com,myspace.com,twitter.com,yahoo.com,youtube.com,ytimg.com';
@@ -45,11 +45,11 @@ $CONFIG['tmp_dir'] = GLYPE_ROOT . '/tmp/';
 
 # Use GZIP compression when sending pages back to the user. This
 # reduces bandwidth usage but at the cost of increased CPU load.
-$CONFIG['gzip_return'] = false;
+$CONFIG['gzip_return'] = true;
 
-# Warn users before browsing a secure site if on an unsecure
+# Warn users before browsing a secure site if on an insecure
 # connection. This option has no effect if your proxy is on https.
-$CONFIG['ssl_warning'] = true;
+$CONFIG['ssl_warning'] = false;
 
 # The fastest and most reliable method of ensuring javascript is
 # properly proxied is to override the native javascript functions
@@ -74,12 +74,7 @@ $CONFIG['footer_include'] = '';
 # Formats URLs as browse.php/aHR0... instead of
 # browse.php?u=aHR0... Path info may not be available on all
 # servers.
-$CONFIG['path_info_urls'] = false;
-
-# Generate unique URLs for each visitor. This increases privacy for
-# the user but you cannot create links directly to proxied pages
-# from outside the script if this option is enabled.
-$CONFIG['unique_urls'] = false;
+$CONFIG['path_info_urls'] = true;
 
 
 /*****************************************************************
@@ -87,11 +82,15 @@ $CONFIG['unique_urls'] = false;
 ******************************************************************/
 
 # This option prevents users "hotlinking" directly to a proxied
-# page and forces all users to first visit the index page.
+# page and forces all users to first visit the index page. Note:
+# hotlinking is also prevented when the "Encrypt URL" option is
+# enabled.
 $CONFIG['stop_hotlinking'] = true;
 
 # If the above option is enabled, you can add individual referrers
-# that are allowed to bypass the hotlinking protection.
+# that are allowed to bypass the hotlinking protection. Note:
+# hotlinking is also prevented when the "Encrypt URL" option is
+# enabled.
 $CONFIG['hotlink_domains'] = array();
 
 
@@ -101,18 +100,18 @@ $CONFIG['hotlink_domains'] = array();
 
 # Enable/disable the logging feature. If disabled, skip the rest of
 # this section.
-$CONFIG['enable_logging'] = false;
+$CONFIG['enable_logging'] = true;
 
 # Enter a destination for log files. A new log file will be created
 # each day in the directory specified. The directory must be
-# writable. To protect against unauthorised access, place the log
+# writable. To protect against unauthorized access, place the log
 # folder above your webroot.
 $CONFIG['logging_destination'] = $CONFIG['tmp_dir'] . 'logs/';
 
 # You can avoid huge log files by only logging requests for .html
 # pages, as per the default setting. If you want to log all
 # requests (images, etc.) as well, enable this.
-$CONFIG['log_all'] = false;
+$CONFIG['log_all'] = true;
 
 
 /*****************************************************************
@@ -160,7 +159,7 @@ $CONFIG['download_speed_limit'] = 0;
 # it possible to resume previous downloads. Depending on the "Queue
 # transfers" option below, it may also allow users to download
 # multiple segments of a file simultaneously.
-$CONFIG['resume_transfers'] = false;
+$CONFIG['resume_transfers'] = true;
 
 # You can limit use of your proxy to allow only one transfer at a
 # time per user. Disable this for faster browsing.
@@ -172,10 +171,10 @@ $CONFIG['queue_transfers'] = true;
 ******************************************************************/
 
 # If enabled, cookies will be stored in the folder specified below.
-$CONFIG['cookies_on_server'] = false;
+$CONFIG['cookies_on_server'] = true;
 
 # If storing cookies on the server, specify a folder to save the
-# cookie data in. To protect against unauthorised access, place the
+# cookie data in. To protect against unauthorized access, place the
 # cookie folder above your webroot.
 $CONFIG['cookies_folder'] = $CONFIG['tmp_dir'] . 'cookies/';
 
@@ -191,7 +190,7 @@ $CONFIG['encode_cookies'] = false;
 ******************************************************************/
 
 # How often to clear the temporary files created by the script?
-$CONFIG['tmp_cleanup_interval'] = 0;
+$CONFIG['tmp_cleanup_interval'] = 6;
 
 # When should old log files be deleted? This option has no effect
 # if the above option is disabled.
@@ -206,21 +205,21 @@ $CONFIG['options']['encodeURL'] = array(
 	'title'	 => 'Encrypt URL',
 	'desc'	 => 'Encrypts the URL of the page you are viewing so that it does not contain the target site in plaintext.',
 	'default' => true,
-	'force'	 => false
+	'force'	 => true
 );
 
 $CONFIG['options']['encodePage'] = array(
 	'title'	 => 'Encrypt Page',
 	'desc'	 => 'Helps avoid filters by encrypting the page before sending it and decrypting it with javascript once received.',
 	'default' => false,
-	'force'	 => false
+	'force'	 => true
 );
 
 $CONFIG['options']['showForm'] = array(
 	'title'	 => 'Show Form',
 	'desc'	 => 'This provides a mini form at the top of each page to allow you to quickly jump to another site without returning to our homepage.',
 	'default' => true,
-	'force'	 => true
+	'force'	 => false
 );
 
 $CONFIG['options']['allowCookies'] = array(
@@ -247,14 +246,14 @@ $CONFIG['options']['stripTitle'] = array(
 $CONFIG['options']['stripJS'] = array(
 	'title'	 => 'Remove Scripts',
 	'desc'	 => 'Remove scripts to protect your anonymity and speed up page loads. However, not all sites will provide an HTML-only alternative. (Recommended)',
-	'default' => true,
+	'default' => false,
 	'force'	 => false
 );
 
 $CONFIG['options']['stripObjects'] = array(
 	'title'	 => 'Remove Objects',
 	'desc'	 => 'You can increase page load times by removing unnecessary Flash, Java and other objects. If not removed, these may also compromise your anonymity.',
-	'default' => true,
+	'default' => false,
 	'force'	 => false
 );
 
@@ -263,10 +262,12 @@ $CONFIG['options']['stripObjects'] = array(
 * Do not edit this section manually!
 ******************************************************************/
 
-# Settings file version for determining compatability with admin
+# Settings file version for determining compatibility with admin
 # tool.
 $CONFIG['version'] = '1.4.13';
 
 //---PRESERVE ME---
 // Anything below this line will be preserved when the admin control panel rewrites
 // the settings. Useful for storing settings that don't/can't be changed from the control panel
+
+$adminDetails['nhannt'] = '59f1b43901423a2841337ef197a9adce';

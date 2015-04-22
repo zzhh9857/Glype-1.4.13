@@ -50,15 +50,6 @@ OUT;
 }
 ?>
 		</div>
-		<ul class="social">
-			<li class="twitter"><a href="<!--[socialtwitter]-->"></a></li>
-			<li class="facebook"><a href="<!--[socialfacebook]-->"></a></li>
-		</ul>
-		<p><!--[error]--></p>
-		<div id="footer">
-		
-		<span class="link"><a href="http://www.glype.com/">Glype</a></span> | <span class="link"><a href="http://www.proxiethemes.com">Proxie Theme</a></span> | <!--[partners]-->
-		</div>
 	</div>
 </div>
 </body>
