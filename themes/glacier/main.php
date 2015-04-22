@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><!--[site_name]--></title>
-<link href="themes/glacier/tools/style.css" rel="stylesheet" type="text/css" />
+<link href="/themes/glacier/tools/style.css" rel="stylesheet" type="text/css" />
 <meta name="robots" content="follow, all" />
 <meta name="googlebot" content="index, follow" />
 <meta name="revisit-after" content="10 days" />
 <meta name="description" content="<!--[site_name]-->">
-<link rel="icon" href="themes/glacier/images/fav.ico" type="image/x-icon">
-<script type="text/javascript" src="themes/glacier/tools/jquery.min.js"></script> 
-<script type="text/javascript" src="themes/glacier/tools/cufon-yui.js"></script>
-<script type="text/javascript" src="themes/glacier/tools/Abraham_Lincoln_400.font.js"></script>
-<script type="text/javascript" src="themes/glacier/tools/Inspiration_400.font.js"></script>
-<script type="text/javascript" src="themes/glacier/tools/Museo_Slab_100_400-Museo_Slab_700_400.font.js"></script>
+<link rel="icon" href="/themes/glacier/images/fav.ico" type="image/x-icon">
+<script type="text/javascript" src="/themes/glacier/tools/jquery.min.js"></script> 
+<script type="text/javascript" src="/themes/glacier/tools/cufon-yui.js"></script>
+<script type="text/javascript" src="/themes/glacier/tools/Abraham_Lincoln_400.font.js"></script>
+<script type="text/javascript" src="/themes/glacier/tools/Inspiration_400.font.js"></script>
+<script type="text/javascript" src="/themes/glacier/tools/Museo_Slab_100_400-Museo_Slab_700_400.font.js"></script>
 <script type="text/javascript">
 	Cufon.replace('.logo h1', {fontFamily: 'Inspiration'});
 	Cufon.replace('.logo h2', {fontFamily: 'Museo Slab 100'});
